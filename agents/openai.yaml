@@ -1,0 +1,4 @@
+interface:
+  display_name: "Duolingo Screenshot Cards"
+  short_description: "Turn Duolingo word screenshots into French study cards"
+  default_prompt: "Use $duolingo-screenshot-cards to extract words from Duolingo screenshots and generate CSV plus TXT study cards."
