@@ -1,4 +1,4 @@
 interface:
-  display_name: "Duolingo Screenshot Cards"
+  display_name: "Duolingo French Cards Skill"
   short_description: "Turn Duolingo word screenshots into French study cards"
-  default_prompt: "Use $duolingo-screenshot-cards to extract words from Duolingo screenshots and generate CSV plus TXT study cards."
+  default_prompt: "Use $duolingo-french-cards-skill to extract words from Duolingo screenshots and generate CSV plus TXT study cards."

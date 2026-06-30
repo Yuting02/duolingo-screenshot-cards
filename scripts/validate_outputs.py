@@ -24,9 +24,9 @@ def read_csv(path: Path) -> tuple[list[str], list[list[str]]]:
 
 def validate(root: Path) -> dict[str, object]:
     outputs = root / "outputs"
-    stage1 = outputs / "1duolingo.csv"
-    stage2 = outputs / "2英标例句.csv"
-    cards = outputs / "3卡片.txt"
+    stage1 = outputs / "duolingo-words.csv"
+    stage2 = outputs / "ipa-examples.csv"
+    cards = outputs / "study-cards.txt"
 
     for path in (stage1, stage2, cards):
         if not path.exists():
@@ -35,19 +35,19 @@ def validate(root: Path) -> dict[str, object]:
     headers1, rows1 = read_csv(stage1)
     headers2, rows2 = read_csv(stage2)
     if headers1 != STAGE1_HEADERS:
-        raise SystemExit(f"unexpected 1duolingo.csv headers: {headers1}")
+        raise SystemExit(f"unexpected duolingo-words.csv headers: {headers1}")
     if headers2 != STAGE2_HEADERS:
-        raise SystemExit(f"unexpected 2英标例句.csv headers: {headers2}")
+        raise SystemExit(f"unexpected ipa-examples.csv headers: {headers2}")
     if not all(len(row) == len(STAGE1_HEADERS) for row in rows1):
-        raise SystemExit("1duolingo.csv has rows with wrong column count")
+        raise SystemExit("duolingo-words.csv has rows with wrong column count")
     if not all(len(row) == len(STAGE2_HEADERS) for row in rows2):
-        raise SystemExit("2英标例句.csv has rows with wrong column count")
+        raise SystemExit("ipa-examples.csv has rows with wrong column count")
 
     text = cards.read_text(encoding="utf-8-sig")
     card_count = text.count("[P#H1#")
     end_count = text.count("*****")
     if len(rows1) != len(rows2):
-        raise SystemExit(f"row count mismatch: 1duolingo={len(rows1)} 2英标例句={len(rows2)}")
+        raise SystemExit(f"row count mismatch: duolingo-words={len(rows1)} ipa-examples={len(rows2)}")
     if len(rows2) != card_count or card_count != end_count:
         raise SystemExit(f"card count mismatch: rows2={len(rows2)} cards={card_count} markers={end_count}")
 

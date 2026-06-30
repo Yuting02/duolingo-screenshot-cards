@@ -16,7 +16,7 @@ Use this reference for full runs that start from Duolingo screenshots.
 4. Within each screenshot, read cards from top to bottom.
 5. When two screenshots overlap, keep the first occurrence of a duplicate word and drop later duplicates.
 
-## Extraction To `1duolingo.csv`
+## Extraction To `duolingo-words.csv`
 
 Create UTF-8 CSV with exactly:
 
@@ -34,7 +34,7 @@ Rules:
 - Flag uncertain OCR or hidden text before guessing.
 - If a bottom row is obscured by the app navigation bar, include it only when the word and translation are both visible or the missing translation is confirmed by provided project examples.
 
-## Enrichment To `2英标例句.csv`
+## Enrichment To `ipa-examples.csv`
 
 Create UTF-8 CSV with exactly:
 
@@ -44,12 +44,12 @@ Create UTF-8 CSV with exactly:
 
 Use `references/enrichment-guidelines.md` for field-level rules.
 
-## Card Rendering To `3卡片.txt`
+## Card Rendering To `study-cards.txt`
 
-Render from `outputs/2英标例句.csv`, not from memory. Use:
+Render from `outputs/ipa-examples.csv`, not from memory. Use:
 
 ```bash
-python <skill-dir>/scripts/render_cards.py --input <workspace>/outputs/2英标例句.csv --output <workspace>/outputs/3卡片.txt
+python <skill-dir>/scripts/render_cards.py --input <workspace>/outputs/ipa-examples.csv --output <workspace>/outputs/study-cards.txt
 ```
 
 Validate after rendering:

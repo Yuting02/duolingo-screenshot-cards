@@ -80,8 +80,8 @@ def render_cards(rows: list[dict[str, str]]) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Render Duolingo enriched CSV into TXT cards.")
-    parser.add_argument("--input", required=True, type=Path, help="Path to 2英标例句.csv")
-    parser.add_argument("--output", type=Path, help="Path to write 3卡片.txt")
+    parser.add_argument("--input", required=True, type=Path, help="Path to ipa-examples.csv")
+    parser.add_argument("--output", type=Path, help="Path to write study-cards.txt")
     parser.add_argument("--check", action="store_true", help="Validate and render in memory without requiring output.")
     args = parser.parse_args()
 

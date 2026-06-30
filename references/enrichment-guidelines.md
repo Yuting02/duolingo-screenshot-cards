@@ -1,12 +1,12 @@
 # Enrichment Guidelines
 
-Use this reference when creating `outputs/2英标例句.csv`.
+Use this reference when creating `outputs/ipa-examples.csv`.
 
 ## Field Rules
 
 ### 法语单词
 
-- Preserve the order from `outputs/1duolingo.csv`.
+- Preserve the order from `outputs/duolingo-words.csv`.
 - Keep accents and spelling correct.
 - If the screenshot spelling appears wrong or uncertain, explain before changing it.
 

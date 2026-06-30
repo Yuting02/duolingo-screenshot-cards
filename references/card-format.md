@@ -1,10 +1,10 @@
 # Card Format Contract
 
-Use this reference when writing or checking `outputs/3卡片.txt`.
+Use this reference when writing or checking `outputs/study-cards.txt`.
 
 ## Required Input CSV
 
-`outputs/2英标例句.csv` must contain:
+`outputs/ipa-examples.csv` must contain:
 
 ```csv
 法语单词,法语英标,例句,词性/用法,英文翻译,中文翻译

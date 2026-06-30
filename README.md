@@ -1,12 +1,12 @@
-# Duolingo Screenshot Cards
+# Duolingo French Cards Skill
 
 把 Duolingo 法语 `Words` 页面截图整理成系统化背单词卡片的 Codex Skill。
 
 这个 skill 适合把零散的 Duolingo 截图变成三份可复用学习资料：
 
-- `1duolingo.csv`：从截图中提取的法语单词和 Duolingo 英文释义
-- `2英标例句.csv`：补充法语 IPA 音标、例句、词性/用法、英文翻译、中文翻译
-- `3卡片.txt`：可直接导入或复制使用的背单词卡片文本
+- `duolingo-words.csv`：从截图中提取的法语单词和 Duolingo 英文释义
+- `ipa-examples.csv`：补充法语 IPA 音标、例句、词性/用法、英文翻译、中文翻译
+- `study-cards.txt`：可直接导入或复制使用的背单词卡片文本
 
 ## 适合哪些人
 
@@ -33,26 +33,26 @@
 ```powershell
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills"
 cd "$env:USERPROFILE\.codex\skills"
-git clone https://github.com/Yuting02/duolingo-screenshot-cards.git
+git clone https://github.com/Yuting02/duolingo-french-cards-skill.git
 ```
 
 安装后，新开一个 Codex 对话或重启 Codex，让 skill 被重新发现。
 
 ### 方法二：下载 ZIP
 
-1. 打开仓库：<https://github.com/Yuting02/duolingo-screenshot-cards>
+1. 打开仓库：<https://github.com/Yuting02/duolingo-french-cards-skill>
 2. 点击 `Code` -> `Download ZIP`
-3. 解压后，把文件夹命名为 `duolingo-screenshot-cards`
+3. 解压后，把文件夹命名为 `duolingo-french-cards-skill`
 4. 放到：
 
 ```text
-C:\Users\你的用户名\.codex\skills\duolingo-screenshot-cards
+C:\Users\你的用户名\.codex\skills\duolingo-french-cards-skill
 ```
 
 macOS / Linux 对应路径通常是：
 
 ```text
-~/.codex/skills/duolingo-screenshot-cards
+~/.codex/skills/duolingo-french-cards-skill
 ```
 
 ## 如何使用
@@ -83,15 +83,15 @@ Duolingo-momo-word/
 可以直接说：
 
 ```text
-用 $duolingo-screenshot-cards 根据 screenshot 生成背单词卡片
+用 $duolingo-french-cards-skill 根据 screenshot 生成背单词卡片
 ```
 
 或者更具体一点：
 
 ```text
-用 $duolingo-screenshot-cards 处理这个目录里的 Duolingo 法语截图：
+用 $duolingo-french-cards-skill 处理这个目录里的 Duolingo 法语截图：
 C:\Users\你的用户名\Desktop\Duolingo-momo-word
-请生成 1duolingo.csv、2英标例句.csv 和 3卡片.txt
+请生成 duolingo-words.csv、ipa-examples.csv 和 study-cards.txt
 ```
 
 ### 3. 输出文件
@@ -99,9 +99,9 @@ C:\Users\你的用户名\Desktop\Duolingo-momo-word
 skill 会生成：
 
 ```text
-outputs/1duolingo.csv
-outputs/2英标例句.csv
-outputs/3卡片.txt
+outputs/duolingo-words.csv
+outputs/ipa-examples.csv
+outputs/study-cards.txt
 ```
 
 最终卡片格式类似：
@@ -157,12 +157,12 @@ courriel
 
 ### 第三步：生成背单词卡片
 
-根据 `2英标例句.csv` 生成 `3卡片.txt`。
+根据 `ipa-examples.csv` 生成 `study-cards.txt`。
 
 仓库内置脚本可以稳定渲染卡片：
 
 ```powershell
-python scripts/render_cards.py --input outputs/2英标例句.csv --output outputs/3卡片.txt
+python scripts/render_cards.py --input outputs/ipa-examples.csv --output outputs/study-cards.txt
 ```
 
 也可以校验输出：
@@ -176,7 +176,7 @@ python scripts/validate_outputs.py --root .
 如果你是通过 git clone 安装的，可以这样更新：
 
 ```powershell
-cd "$env:USERPROFILE\.codex\skills\duolingo-screenshot-cards"
+cd "$env:USERPROFILE\.codex\skills\duolingo-french-cards-skill"
 git pull
 ```
 
